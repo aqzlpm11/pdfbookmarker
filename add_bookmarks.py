@@ -102,7 +102,7 @@ def get_bookmarks_tree(bookmarks_filename):
     latest_nodes = {0: tree}
 
     prev_level = 0
-    for line in codecs.open(bookmarks_filename, 'r', encoding='utf-8'):
+    for line in open(bookmarks_filename):
         res = re.match(r'(\+*)\s*?"([^"]+)"\s*\|\s*(\d+)', line.strip())
         if res:
             pluses, title, pagenum = res.groups()
